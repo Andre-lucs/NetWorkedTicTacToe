@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main" prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.andrelucs.networkedtictactoe.controllers.MainController">
+   <VBox prefHeight="650.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <HBox>
+            <children>
+                <Label fx:id="playerFormLabel" alignment="CENTER" prefHeight="25.0" prefWidth="400.0" text="You are Cross" textAlignment="CENTER">
+                  <font>
+                     <Font name="Century Gothic Bold" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="turnStatusLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="600.0" text="Your turn status will be displayed here" textAlignment="CENTER">
+                  <font>
+                     <Font name="Century Gothic Bold" size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" spacing="20.0">
+            <children>
+               <AnchorPane>
+                  <children>
+                     <VBox alignment="TOP_CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <children>
+                           <Label text="X">
+                              <font>
+                                 <Font name="System Bold" size="36.0" />
+                              </font>
+                           </Label>
+                           <Line endX="10.0" startX="-10.0" strokeWidth="3.0" />
+                           <Label fx:id="crossScoreLabel" layoutX="10.0" layoutY="10.0" text="0" textAlignment="CENTER">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </AnchorPane>
+            
+                <GridPane fx:id="board" gridLinesVisible="true" prefHeight="600.0" prefWidth="600.0" stylesheets="@stylesheets/main.css">
+                    <Button fx:id="button00" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Button fx:id="button10" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="button20" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Button fx:id="button01" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Button fx:id="button11" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button fx:id="button21" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <Button fx:id="button02" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Button fx:id="button12" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Button fx:id="button22" onAction="#handleButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                </GridPane>
+               <AnchorPane layoutX="42.0" layoutY="10.0">
+                  <children>
+                     <VBox alignment="TOP_CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <children>
+                           <Label text="O">
+                              <font>
+                                 <Font name="System Bold" size="36.0" />
+                              </font>
+                           </Label>
+                           <Line endX="10.0" startX="-10.0" strokeWidth="3.0" />
+                           <Label fx:id="circleScoreLabel" layoutX="10.0" layoutY="10.0" text="0" textAlignment="CENTER">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </AnchorPane>
+            </children>
+         </HBox>
+          <Label fx:id="matchInfoLabel" alignment="CENTER" prefHeight="25.0" prefWidth="700.0" text="Match info will be displayed here" textAlignment="CENTER">
+            <font>
+               <Font name="Century Gothic Bold" size="18.0" />
+            </font>
+         </Label>
+      </children>
+   </VBox>
+   <VBox alignment="CENTER" layoutX="-4.099999904632568" layoutY="100.0" mouseTransparent="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Pane fx:id="rematchPanel" maxWidth="250.0" prefHeight="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white; -fx-border-radius: 5px; " visible="false" VBox.vgrow="NEVER">
+            <children>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0">
+                  <children>
+                      <VBox alignment="CENTER" spacing="10" visible="true">
+                          <Label text="Do you want a rematch?">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                          <HBox alignment="CENTER" spacing="10">
+                              <Button onAction="#handleAcceptRematch" text="Yes" />
+                              <Button onAction="#handleRejectRematch" text="No" />
+                          </HBox>
+                      </VBox>
+                  </children>
+               </HBox>
+            </children>
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+         </Pane>
+      </children>
+   </VBox>
+</AnchorPane>

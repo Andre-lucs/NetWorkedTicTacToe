@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.andrelucs.networkedtictactoe.controllers.FindMatchController">
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label text="Server/Client Setup" />
+        <HBox alignment="CENTER" spacing="10.0">
+            <Button onAction="#handleCreateServer" text="Create Server" />
+            <Button onAction="#handleConnectToServer" text="Connect to Server" />
+        </HBox>
+        <TextField fx:id="serverAddressField" promptText="Server Address" text="localhost" />
+        <TextField fx:id="serverPortField" promptText="Server Port" text="8080" />
+        <Label fx:id="statusLabel" text="Status: Not connected" />
+      <padding>
+         <Insets bottom="20.0" left="100.0" right="100.0" top="20.0" />
+      </padding>
+    </VBox>
+</AnchorPane>
